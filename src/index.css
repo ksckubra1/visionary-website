@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #D3D2D3;
+  font-family: 'Inter', sans-serif;
+}
+
+.template {
+  width: 1500px;
+  height: 650px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  background-color: white;
+  position: relative;
+}
+
+.slogan {
+  position: absolute;
+  right: 60px;
+  top: 30px;
+  font-size: 50px;
+  text-align: right;
+  transition: all .2s;
+  font-weight: 400;
+  opacity: .7;
+  pointer-events: none;
+}
+
+.template:has(section:focus) .slogan {
+  color: white;
+  font-weight: 900;
+  text-shadow: 0px 0px 20px black;
+}
+
+
+.template:has(section:focus) section:not(:focus) {
+  width: 0px;
+  border: none;
+}
+
+section {
+  width: 300px;
+  height: 650px;
+  overflow: hidden;
+  display: block;
+  position: relative;
+  transition: all .5s;
+  border-right: 2px solid #D3D2D3;
+}
+
+section:last-of-type {
+  border: none;
+}
+
+section:hover img {
+  transform: translateY(0);
+}
+
+section:focus {
+  width: 1500px;
+  border: none;
+}
+
+
+section:focus img {
+  transform: translateY(0);
+}
+
+section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: translateY(100%);
+  transition: all .5s;
+}
+
+section .title {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 40px;
+  color: black;
+  opacity: .7;
+  transition: all .2s;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+
+section:hover .title {
+  color: var(--text-color);
+}
+
+section:focus .title {
+  color: var(--text-color);
+  bottom: 30px;
+  left: 30px;
+  font-size: 80px;
+  text-shadow: var(--shadow);
+  font-weight: 900;
+}
+
+.close-btn {
+  display: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid rgba(255, 255, 255, .2);
+  background-color: rgba(0, 0, 0, .5);
+  padding: 10px 15px;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.template:has(section:focus) .close-btn {
+  display: block;
+}
+
+.logo {
+  padding-top: 20px;
+  padding-left: 20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  transition: all .4s;
+  pointer-events: none;
+}
+
+.logo img {
+  width: 50px;
+}
+
+.logo span {
+  font-size: 18px;
+  color: #4C4C4C;
+}
+
+.template:has(section:focus) .logo {
+  opacity: 0;
+}
